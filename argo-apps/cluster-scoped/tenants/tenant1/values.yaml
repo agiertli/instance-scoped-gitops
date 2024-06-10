@@ -1,0 +1,6 @@
+env: 
+ - name: dev
+ - name: uat
+ - name: stage
+
+tenant_name: tenant1

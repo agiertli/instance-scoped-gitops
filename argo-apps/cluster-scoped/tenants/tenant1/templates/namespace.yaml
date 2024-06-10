@@ -1,0 +1,13 @@
+{{- range $key := .Values.env }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"    
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  labels:
+    kubernetes.io/metadata.name: {{ $.Values.tenant_name }}-{{.name}}
+    argocd.argoproj.io/managed-by: {{ $.Values.tenant_name }}-gitops
+  name: {{ $.Values.tenant_name }}-{{.name}}
+{{- end }}  

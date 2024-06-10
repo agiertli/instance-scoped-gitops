@@ -10,7 +10,6 @@ metadata:
   name:  {{ $.Values.tenant_name }}-gitops
   namespace:  {{ $.Values.tenant_name }}-gitops
 spec:
-  applicationInstanceLabelKey: rht-gitops.com/{{ $.Values.tenant_name }}-gitops
   applicationSet:
     webhookServer:
       ingress:

@@ -17,7 +17,7 @@ while getopts "p:" opt; do
 done
 
 echo "Creating Subscription: argocd"
-oc apply -f cluster-scoped/argocd-subs.yaml
+oc apply -f ../argo-apps/cluster-scoped/subs.yaml
 
 
 while [[ argoSecret=$(oc -n $GITOPS_NAMESPACE get secret $GITOPS_NAMESPACE-cluster 2>&1 > /dev/null) == *"Error"* ]]
@@ -30,6 +30,6 @@ oc -n $GITOPS_NAMESPACE patch secret argocd-secret --patch "{\"data\": {\"admin.
 
 
 
-oc apply -f cluster-scoped/application-set.yaml
+oc apply -f ../argo-apps/cluster-scoped/application-set.yaml -n $GITOPS_NAMESPACE
 
 echo "Installation complete!" 

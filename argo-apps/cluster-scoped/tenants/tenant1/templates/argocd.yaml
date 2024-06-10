@@ -97,8 +97,5 @@ spec:
       enabled: false
     route:
       enabled: true
-      tls:
-        termination: reencrypt
     service:
       type: ""
-  version: v2.4.11

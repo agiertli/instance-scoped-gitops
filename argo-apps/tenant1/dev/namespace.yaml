@@ -5,6 +5,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"    
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   labels:
-    kubernetes.io/metadata.name: tenant2-dev
+    kubernetes.io/metadata.name: tenant1-dev
     argocd.argoproj.io/managed-by: tenant1-gitops
-  name: tenant2-dev
+  name: tenant1-dev

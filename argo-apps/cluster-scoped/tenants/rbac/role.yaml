@@ -1,0 +1,67 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  namespace: openshift-gitops
+  name: custom-argocd-role
+rules:
+- apiGroups:
+  - argocds.argoproj.io
+  resources:
+   - argocds
+  verbs:
+   - '*' 
+- apiGroups: 
+   - kafka.strimzi.io
+  resources: 
+    - kafka
+  verbs: 
+   - '*'
+- apiGroups: 
+   - .rhtas.redhat.com
+  resources: 
+    - securesign
+  verbs: 
+   - '*'
+- apiGroups: 
+   - keycloak.org
+  resources: 
+    - keycloaks
+    - keycloakclients
+    - keycloakrealms
+    - keycloakusers
+  verbs: 
+   - '*'
+- apiGroups: 
+   - sonatype.com
+  resources: 
+    - NexusRepo
+    - nexusrepos
+  verbs: 
+   - '*'
+- apiGroups: 
+   - redhatcop.redhat.io
+  resources: 
+    - namespaceconfigs
+    - namespaceconfig
+  verbs: 
+   - '*'
+- apiGroups:
+  - org.eclipse.che
+  resources:
+  - checlusters
+  - checluster
+  verbs:
+  - '*'  
+- apiGroups:
+  - controller.devfile.io
+  resources:
+  - devworkspaceoperatorconfigs
+  verbs:
+  - '*'          
+- apiGroups:
+  - workspace.devfile.io
+  resources:
+  - devworkspace
+  - devworkspaces
+  verbs:
+  - '*'     

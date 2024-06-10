@@ -32,7 +32,5 @@ spec:
         # different namespaces named after the directories names to be used as destinations
         namespace: {{ $.Values.tenant_name }}-{{ `'{{.path.basename}}'` }}
       syncPolicy:
-       syncOptions:
-        - CreateNamespace=true  
        automated:
         selfHeal: true 

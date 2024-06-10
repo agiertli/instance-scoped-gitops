@@ -18,12 +18,12 @@ spec:
     repoURL: {{ $.Values.spec.source.repoURL }}
     targetRevision: {{ $.Values.spec.source.targetRevision }}
   syncPolicy:
-      managedNamespaceMetadata:
-        labels:
-          argocd.argoproj.io/managed-by: {{ $.Values.argo.namespace }}-gitops
+      # managedNamespaceMetadata:
+      #   labels:
+      #     argocd.argoproj.io/managed-by: {{ $.Values.argo.namespace }}-gitops
       syncOptions:
       - SkipDryRunOnMissingResource=true
-      - CreateNamespace=true
+#      - CreateNamespace=true
       automated:
         selfHeal: true
 {{ end }}     

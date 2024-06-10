@@ -20,6 +20,7 @@ spec:
   syncPolicy:
     syncOptions:
      - SkipDryRunOnMissingResource=true
+     - CreateNamespace=true
     automated:
       selfHeal: true
 {{ end }}     

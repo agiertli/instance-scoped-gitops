@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{.path.basename}}'
+      name: {{ `'{{.path.basename}}'` }}
     spec:
       project: default
       source:
@@ -26,11 +26,11 @@ spec:
         repoURL: https://github.com/agiertli/instance-scoped-gitops.git
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{.path.path}}'
+        path: {{ `'{{.path.path}}'` }}
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: {{ $.Values.tenant_name }}-'{{.path.basename}}'
+        namespace: {{ $.Values.tenant_name }}-{{ `'{{.path.basename}}'` }}
       syncPolicy:
        syncOptions:
         - CreateNamespace=true  

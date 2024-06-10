@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-prod
+  template:
+    metadata:
+      labels:
+        app: hello-world-prod
+    spec:
+      containers:
+      - name: hello-world-prod
+        image: openshift/hello-openshift:latest
+        ports:
+        - containerPort: 8080

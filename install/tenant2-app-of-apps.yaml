@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tenant2-app-of-apps
+  namespace: tenant2
+spec:
+  destination:
+    namespace: tenant2
+    server: https://kubernetes.default.svc
+  project: tenant2-project
+  source:
+    path: argo-apps/tenant2/parent
+    repoURL: https://github.com/agiertli/instance-scoped-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true

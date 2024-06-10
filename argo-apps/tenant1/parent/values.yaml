@@ -1,0 +1,24 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/agiertli/instance-scoped-gitops.git
+    targetRevision: HEAD
+argo:
+  namespace: tenant1
+  destination: tenant1
+  project: tenant1-project
+
+applications:
+
+applications:
+
+   - name: tenant1-dev
+     path: dev
+     destination: tenant1-dev
+     enabled: true
+
+   - name: tenant1-prod
+     path: prod
+     destination: tenant1-prod
+     enabled: true    

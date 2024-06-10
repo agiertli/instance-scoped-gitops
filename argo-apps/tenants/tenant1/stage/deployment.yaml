@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world-dev
+  namespace: tenant1-stage
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"    
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   replicas: 1
   selector:

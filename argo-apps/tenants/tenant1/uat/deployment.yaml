@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-dev
-  namespace: tenant1-dev  
+  name: hello-world-uat
+  namespace: tenant1-uat  
   annotations:
     argocd.argoproj.io/sync-wave: "0"    
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
@@ -10,14 +10,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world-dev
+      app: hello-world-uat
   template:
     metadata:
       labels:
-        app: hello-world-dev
+        app: hello-world-uat
     spec:
       containers:
-      - name: hello-world-dev
+      - name: hello-world-uat
         image: openshift/hello-openshift:latest
         ports:
         - containerPort: 8080

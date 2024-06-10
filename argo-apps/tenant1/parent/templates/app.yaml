@@ -20,7 +20,7 @@ spec:
   syncPolicy:
       managedNamespaceMetadata:
         labels:
-          argocd.argoproj.io/managed-by: {{ $.Values.argo.namespace }}
+          argocd.argoproj.io/managed-by: {{ $.Values.argo.namespace }}-gitops
       syncOptions:
       - SkipDryRunOnMissingResource=true
       - CreateNamespace=true

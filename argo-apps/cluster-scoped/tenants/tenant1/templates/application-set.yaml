@@ -14,7 +14,7 @@ spec:
       revision: HEAD
       directories:
       # path to the directory that includes directories to read as variables
-      - path: argo-apps//tenants/tenant1/*
+      - path: argo-apps/tenants/tenant1/*
   template:
     metadata:
       # basename is the name of the directory not the full path

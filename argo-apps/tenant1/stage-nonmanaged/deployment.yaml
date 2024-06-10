@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-stage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-stage
+  template:
+    metadata:
+      labels:
+        app: hello-world-stage
+    spec:
+      containers:
+      - name: hello-world-stage
+        image: openshift/hello-openshift:latest
+        ports:
+        - containerPort: 8080

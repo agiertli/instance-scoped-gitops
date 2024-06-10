@@ -54,4 +54,8 @@ oc apply -f tenant2-project.yaml
 oc patch configmaps argocd-rbac-cm  -p '{"data":{"policy.default":" "}}' -n $TENANT1
 oc patch configmaps argocd-rbac-cm  -p '{"data":{"policy.default":" "}}' -n $TENANT2
 
+oc apply -f tenant1-app-of-apps.yaml
+oc apply -f tenant2-app-of-apps.yaml
+
+
 echo "Installation complete!" 

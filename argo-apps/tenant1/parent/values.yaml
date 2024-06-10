@@ -22,3 +22,8 @@ applications:
      path: prod
      destination: tenant1-prod
      enabled: true    
+
+   - name: tenant1-stage
+     path: stage-nonmanaged
+     destination: tenant1-stage
+     enabled: true         

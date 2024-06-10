@@ -18,6 +18,9 @@ spec:
     repoURL: {{ $.Values.spec.source.repoURL }}
     targetRevision: {{ $.Values.spec.source.targetRevision }}
   syncPolicy:
+      managedNamespaceMetadata:
+      labels:
+        argocd.argoproj.io/managed-by: {{ $.Values.argo.namespace }}
     syncOptions:
      - SkipDryRunOnMissingResource=true
      - CreateNamespace=true

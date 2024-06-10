@@ -10,7 +10,7 @@ cd install
  - **As cluster-admin, I want to add a new tenant:**
    - Create new folder <tenant_name> under `argo-apps/tenants`
    - Copy content from one of the previously created tenants (i.e. tenant1) into the new folder
-   - Fill in the values.yaml appropriately - each `env` entry correspond to a namespace (i.<tenant-name>-<env>)
+   - Fill in the values.yaml appropriately - each `env` entry correspond to a namespace (i.e. `<tenant-name>-<env>` )
    - The new tenant configuration does following:
      - Adds all the required namespaces (i.e. tenant1-dev, uat, stage, gitops)
      - Creates Instance Scoped ArgoCD instance which can manage above namespaces

@@ -18,7 +18,7 @@ cd install
 
  - **As a tenant, I want to deploy a new application into my namespace**
     -  each entry in the `env` (i.e. dev, stage, uat) corresponds to specific environment ( == namespace)
-    -  Simply create a new directory under `argoa-apps/tenants/<tenant-name>` - name of the directory must equal to one of the `env` entry - and start placing OpenShift manifests (or helm chart, kustomize) into this folder
+    -  Simply create a new directory under `argo-apps/tenants/<tenant-name>` - name of the directory must equal to one of the `env` entry - and start placing OpenShift manifests (or helm chart, kustomize) into this folder
     -  No need to take care of specifics of ArgoCD - everything is taken care of, you only manipulate with OCP manifests and nothing else
   
   

@@ -26,4 +26,9 @@ applications:
    - name: tenant1-stage
      path: stage-nonmanaged
      destination: tenant1-stage
+     enabled: true       
+
+   - name: tenant1-rbac
+     path: rbac
+     destination: tenant1
      enabled: true         

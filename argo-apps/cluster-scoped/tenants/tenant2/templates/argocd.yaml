@@ -10,7 +10,17 @@ metadata:
   name:  {{ $.Values.tenant_name }}-gitops
   namespace:  {{ $.Values.tenant_name }}-gitops
 spec:
-  applicationInstanceLabelKey: rht-gitops.com/ {{ $.Values.tenant_name }}-gitops
+  sso:
+    dex:
+      openShiftOAuth: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 256Mi
+        requests:
+          cpu: 250m
+          memory: 128Mi
+    provider: dex
   applicationSet:
     webhookServer:
       ingress:

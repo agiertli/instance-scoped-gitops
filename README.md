@@ -13,8 +13,8 @@ cd install
    - Fill in the values.yaml appropriately - each `env` entry correspond to a namespace (i.e. `<tenant-name>-<env>` )
    - The new tenant configuration does following:
      - Adds all the required namespaces (i.e. tenant1-dev, uat, stage, gitops)
-     - Creates Instance Scoped ArgoCD instance which can manage above namespaces
-     - Creates ApplicationSet which allows tenants to deploy their application into namespace specific ArgoCD Applications
+     - Creates namespace-scoped ArgoCD instance - into `<tenant-name>-gitops` namespace which can manage  all the namespaces above
+     - Creates ApplicationSet - in `<tenant-name>-gitops` -  which allows tenants to deploy their application into namespace specific ArgoCD Applications
 
  - **As a tenant, I want to deploy a new application into my namespace**
     -  each entry in the `env` (i.e. dev, stage, uat) corresponds to specific environment ( == namespace)

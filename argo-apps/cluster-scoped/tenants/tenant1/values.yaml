@@ -2,5 +2,6 @@ env:
  - name: dev
  - name: uat
  - name: stage
+ - name: gitops
 
 tenant_name: tenant1

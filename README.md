@@ -8,7 +8,7 @@ cd install
 ## Usage
 
  - **As cluster-admin, I want to add a new tenant:**
-   - Create new folder <tenant_name> under `argo-apps/tenants`
+   - Create new folder <tenant_name> under `argo-apps/cluster-scoped/tenants`
    - Copy content from one of the previously created tenants (i.e. tenant1) into the new folder
    - Fill in the values.yaml appropriately - each `env` entry correspond to a namespace (i.e. `<tenant-name>-<env>` )
    - The new tenant configuration does following:
